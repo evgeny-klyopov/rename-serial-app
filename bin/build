@@ -1,0 +1,18 @@
+#!/bin/bash
+mkdir -p sources
+
+env GOARCH=amd64 GOOS=darwin go build -o rsd github.com/evgeny-klyopov/rename-serial-app/cmd
+tar -cvzf rsd.macos-amd64.tar.gz rsd && mv rsd.macos-amd64.tar.gz sources/
+rm rsd
+
+env GOARCH=amd64 GOOS=linux go build -o rsd github.com/evgeny-klyopov/rename-serial-app/cmd
+tar -cvzf rsd.linux-amd64.tar.gz rsd && mv rsd.linux-amd64.tar.gz sources/
+rm rsd
+
+env GOARCH=amd64 GOOS=windows go build -o rsd.exe github.com/evgeny-klyopov/rename-serial-app/cmd
+tar -cvzf rsd.windows-amd64.tar.gz rsd.exe && mv rsd.windows-amd64.tar.gz sources/
+rm rsd.exe
+
+env GOARCH=arm64 GOOS=darwin go build -o rsd github.com/evgeny-klyopov/rename-serial-app/cmd
+tar -cvzf rsd.macos-arm64.tar.gz rsd && mv rsd.macos-arm64.tar.gz sources/
+rm rsd
