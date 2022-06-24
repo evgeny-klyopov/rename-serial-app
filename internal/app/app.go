@@ -249,7 +249,7 @@ func (a *app) renameSerials() error {
 
 	a.color.Print(a.color.Green, "\nRename input directory:")
 
-	return a.rename(a.inputDir, "Season "+fmt.Sprintf("%d", a.maskProperties.seasonMax))
+	return a.rename(a.inputDir, a.inputDir+"/../Season "+fmt.Sprintf("%d", a.maskProperties.seasonMax))
 }
 
 func (a *app) getCountLetterByNumber(number uint8) uint8 {

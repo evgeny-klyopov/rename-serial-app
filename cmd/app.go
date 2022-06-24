@@ -21,7 +21,7 @@ func main() {
 	app := &cli.App{
 		Name: "RSD" +
 			"",
-		Version:  "v0.0.3",
+		Version:  "v0.0.4",
 		Flags:    p.GetFlags(),
 		HelpName: "rsd",
 		Usage:    "Rename serial dir",
